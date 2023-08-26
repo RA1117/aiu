@@ -18,32 +18,27 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->insert([
             'name' => '犬',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+         
         ]);
 
         DB::table('categories')->insert([
             'name' => '猫',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+       
         ]);
 
         DB::table('categories')->insert([
             'name' => '鼬',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+       
         ]);
 
         DB::table('categories')->insert([
             'name' => '龍',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+     
         ]);
 
         DB::table('categories')->insert([
             'name' => '虎',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime(),
+       
         ]);
     }
 }
