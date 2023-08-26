@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('title',20);
             $table->foreignId('user_id')->constrained();  
             $table->string('body',100);
-            $table->string('time',10);
             $table->foreignId('category_id')->constrained();  
             $table->timestamps();
         });
