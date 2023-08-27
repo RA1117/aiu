@@ -17,10 +17,16 @@ class QuizeSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('families_quizzes')->insert([
+         DB::table('quizzes')->insert([
             'user_id' => 1,
-            'question' => '質問',
-            'answer' => '解答',
+            'question' => '質問1',
+            'answer' => '解答1',
+        ]);
+        
+        DB::table('quizzes')->insert([
+            'user_id' => 1,
+            'question' => '質問2',
+            'answer' => '解答2',
         ]);
     }
 }

@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Event::class);
     }
+    
+    public function quizzes()
+    {
+        return $this->HasMany(Quiz::class);
+    }
 }
