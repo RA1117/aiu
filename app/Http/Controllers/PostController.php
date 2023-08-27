@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\Family;
 
 class PostController extends Controller
 {
@@ -47,5 +48,16 @@ class PostController extends Controller
     {
         return view('family');
     }
-
+    
+    public function family_create()
+    {
+        return view('family_create');
+    }
+    
+    public function family_register(Request $request, Family $family)
+    {
+        $input_family = $request['family'];
+        $family->fill($input_family)->save();
+        return redirect('/family');
+    }
 }

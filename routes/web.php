@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\FamilyController;
 
 
 /*
@@ -49,6 +50,8 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
     Route::put('/posts/{post}', 'update')->name('update');
     Route::delete('/posts/{post}', 'delete')->name('delete');
     Route::get('/posts/{post}/edit', 'edit')->name('edit');
+    Route::get('/family_create', 'family_create')->name('family_create');
+    Route::post('/family_ceate/family_register', 'family_register')->name('family_register');
 });
 
 require __DIR__.'/auth.php';
