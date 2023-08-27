@@ -11,8 +11,10 @@
         <h1>詳細画面</h1>
         <div>
             <p>タイトル：{{ $post->title }}</p>
+            <p>日時：{{ $post->time }}</p>
             <p>本文：{{ $post->body }}</p>
             <p>カテゴリー：<a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a></p>
+            <p>ギャラリー：</p>
         </div>
         <div>
             <p class="edit">[<a href="/posts/{{ $post->id }}/edit">編集</a>]</p>

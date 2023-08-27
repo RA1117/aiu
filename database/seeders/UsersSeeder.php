@@ -18,7 +18,7 @@ class usersSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-          
+            'family_id' => 1,
             'name' => '名前',
             'email' => 'メールアドレス',
             'password' => 'パスワード',

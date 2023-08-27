@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
+<!--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">-->
+
+
+<x-app-layout>
+    <x-slot name="header">
+         <meta charset="utf-8">
         <title>Blog</title>
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    </head>
-    <body>
-        <h1>チーム開発会へようこそ！</h1>
+    </x-slot>
+   <h1>家族の思い出を記録しよう！</h1>
         <h2>投稿一覧画面</h2>
         <a href='/posts/create'>新規投稿</a>
         <div>
@@ -23,5 +25,4 @@
         <div>
             {{ $posts->links() }}
         </div>
-    </body>
-</html>
+</x-app-layout>

@@ -14,6 +14,10 @@
                     <h2>タイトル</h2>
                     <input type='text' name='post[title]' value="{{ $post->title }}">
                 </div>
+                <div class='content__time'>
+                    <h2>日時</h2>
+                    <input type='text' name='post[time]' value="{{ $post->time }}">
+                </div>
                 <div class='content__body'>
                     <h2>本文</h2>
                     <input type='text' name='post[body]' value="{{ $post->body }}">

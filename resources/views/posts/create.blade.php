@@ -5,7 +5,7 @@
         <title>Blog</title>
     </head>
     <body>
-        <h1>チーム開発会へようこそ！</h1>
+        <h1>家族の思い出を記録しよう！</h1>
         <h2>投稿作成</h2>
         <form action="/posts" method="POST">
             @csrf
@@ -13,6 +13,11 @@
                 <h2>タイトル</h2>
                 <input type="text" name="post[title]" placeholder="タイトル" value="{{ old('post.title') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('post.title') }}</p>
+            </div>
+             <div>
+                <h2>日時</h2>
+                <input type="text" name="post[time]" placeholder="日時" value="{{ old('post.time') }}"/>
+                <p class="time__error" style="color:red">{{ $errors->first('post.time') }}</p>
             </div>
             <div>
                 <h2>本文</h2>
