@@ -6,9 +6,10 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use DateTime;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
-
-class usersSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,9 +20,27 @@ class usersSeeder extends Seeder
     {
         DB::table('users')->insert([
           
-            'name' => '名前',
-            'email' => 'メールアドレス',
-            'password' => 'パスワード',
+            'name' => Str::random(10),
+            'email' => Str::random(10).'@gmail.com',
+            'password' => Hash::make('password'),
+      
+        
+        ]);
+        
+        DB::table('users')->insert([
+          
+            'name' => Str::random(10),
+            'email' => Str::random(10).'@gmail.com',
+            'password' => Hash::make('password'),
+      
+        
+        ]);
+        
+        DB::table('users')->insert([
+          
+            'name' => Str::random(10),
+            'email' => Str::random(10).'@gmail.com',
+            'password' => Hash::make('password'),
       
         
         ]);

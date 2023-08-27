@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\User;
 
 class EventController extends Controller
 {
-    public function show(){
-        return view('calendars.calendar');
+    public function show(User $user){
+        return view('calendars.calendar')->with(["users"=>$user->get()]);
     }
     // 予定の追加
     public function create(Request $request, Event $event){
@@ -19,12 +20,14 @@ class EventController extends Controller
             'event_end' => 'required',
             'event_color' => 'required',
         ]);
-
+        
+        
         // 登録処理
         $event->event_title = $request->input('event_title');
         $event->event_body = $request->input('event_body');
         $event->event_start = $request->input('event_start');
         $event->event_end = date("Y-m-d", strtotime("{$request->input('event_end')} +1 day")); // FullCalendarが登録する終了日は仕様で1日ずれるので、その修正を行っている
+        $event->user_id = $request->input('user_id');
         $event->event_color = $request->input('event_color');
         $event->event_border_color = $request->input('event_color');
         $event->save();
@@ -69,6 +72,7 @@ class EventController extends Controller
         $input->event_body = $request->input('event_body');
         $input->event_start = $request->input('event_start');
         $input->event_end = date("Y-m-d", strtotime("{$request->input('event_end')} +1 day"));
+        $input->user_id = $request->input('user_id');
         $input->event_color = $request->input('event_color');
         $input->event_border_color = $request->input('event_color');
 

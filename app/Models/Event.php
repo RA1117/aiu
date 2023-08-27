@@ -15,7 +15,13 @@ class Event extends Model
         'event_body',
         'event_start',
         'event_end',
+        'user_id',
         'event_color',
         'event_border_color',
     ];
+    
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }
