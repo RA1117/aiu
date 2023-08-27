@@ -17,27 +17,27 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            'name' => '犬',
+            'name' => '趣味',
          
         ]);
 
         DB::table('categories')->insert([
-            'name' => '猫',
+            'name' => '旅行',
        
         ]);
 
         DB::table('categories')->insert([
-            'name' => '鼬',
+            'name' => 'お出かけ',
        
         ]);
 
         DB::table('categories')->insert([
-            'name' => '龍',
+            'name' => '思い出',
      
         ]);
 
         DB::table('categories')->insert([
-            'name' => '虎',
+            'name' => '重要',
        
         ]);
     }
