@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
 });   
 
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
     Route::get('/family', 'family')->name('family');
     Route::get('/', 'index')->name('index');
     Route::post('/posts', 'store')->name('store');
