@@ -20,8 +20,6 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             PostSeeder::class,
             ImageSeeder::class,
-            EventSeeder::class,
-            Event_usersSeeder::class,
             QuizeSeeder::class,
             RecordSeeder::class,
         ]);
