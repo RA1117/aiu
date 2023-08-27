@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('event_body')->nullable()->comment('イベント内容');
             $table->date('event_start')->comment('開始日');
             $table->date('event_end')->comment('終了日');
+            $table->foreignId('user_id')->constrained();
             $table->string('event_color')->comment('背景色');
             $table->string('event_border_color')->comment('枠線色');
             $table->timestamps();

@@ -24,6 +24,14 @@
                     <input id="new-event_end" class="input-date" type="date" name="event_end" value="" />
                     <label for="event_body" style="display: block">内容</label>
                     <textarea id="new-event_body" name="event_body" rows="3" value=""></textarea>
+                    
+                    <label for='user_name'>名前</label>
+                    <select name="user_id">
+                        @foreach($users as $user)
+                        <option value='{{$user->id}}'>{{$user->name}}</option>
+                        @endforeach
+                    </select>
+                    
                     <label for="event_color">背景色</label>
                     <select id="new-event_color" name="event_color">
                         <option value="blue" selected>青</option>
@@ -52,6 +60,14 @@
                     <input class="input-date" type="date" id="event_end" name="event_end" value="" />
                     <label for="event_body" style="display: block">内容</label>
                     <textarea id="event_body" name="event_body" rows="3" value=""></textarea>
+                    
+                    <label for='user_name'>名前</label>
+                    <select name="user_id">
+                        @foreach($users as $user)
+                        <option value='{{$user->id}}'>{{$user->name}}</option>
+                        @endforeach
+                    </select>
+                    
                     <label for="event_color">背景色</label>
                     <select id="event_color" name="event_color">
                         <option value="blue">青</option>
@@ -96,7 +112,7 @@
 /* モーダル */
 .modal-contents{
     background-color: white;
-    height: 450px;
+    height: 500px;
     width: 600px;
     padding: 20px;
 }
