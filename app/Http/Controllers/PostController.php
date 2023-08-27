@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -45,9 +47,24 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
     
-    public function family()
+    public function family(Post $post, User $user)
     {
-        return view('family');
+         $user = Auth::user();
+       
+        if($user->family_id!=null){
+            $users = User::where('family_id', $user->family_id)->get();
+        $postsByUsers = [];
+
+        foreach ($users as $user) {
+            $posts = Post::where('user_id', $user->id)->get();
+            $postsByUsers[$user->id] = $posts;
+        }
+             return view('posts/index')->with(['postsByUsers' => $postsByUsers]);
+        }else{
+             return view('family');
+        }
     }
+    
+  
 
 }
