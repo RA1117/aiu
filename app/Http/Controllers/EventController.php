@@ -33,7 +33,7 @@ class EventController extends Controller
         $event->save();
 
         // カレンダー表示画面にリダイレクトする
-        return redirect(route("show"));
+        return redirect(route("calendar"));
     }
      // DBから予定取得
     public function get(Request $request, Event $event){
@@ -80,7 +80,7 @@ class EventController extends Controller
         $event->find($request->input('id'))->fill($input->attributesToArray())->save(); // fill()の中身はArray型が必要だが、$inputのままではコレクションが返ってきてしまうため、Array型に変換
 
         // カレンダー表示画面にリダイレクトする
-        return redirect(route("show"));
+        return redirect(route("calendar"));
     }
     // 予定の削除
     public function delete(Request $request, Event $event){
@@ -88,6 +88,6 @@ class EventController extends Controller
         $event->find($request->input('id'))->delete();
 
         // カレンダー表示画面にリダイレクトする
-        return redirect(route("show"));
+        return redirect(route("calendar"));
     }
 }

@@ -27,15 +27,15 @@ Route::get('/welcome', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/quiz/index', [QuizController::class, 'index'])->name('quiz');
-    Route::get('/quiz/show', [QuizController::class, 'show'])->name('show');
-    Route::get('/quiz/create', [QuizController::class, 'create'])->name('create');
-    Route::post('/quiz/index', [QuizController::class, 'store'])->name('store');
+    Route::get('/quiz/show', [QuizController::class, 'show'])->name('quiz.show');
+    Route::get('/quiz/create', [QuizController::class, 'create'])->name('quiz.create');
+    Route::post('/quiz/index', [QuizController::class, 'store'])->name('quiz.store');
     
     Route::get('/calendar', [EventController::class, 'show'])->name('calendar');
-    Route::post('/calendar/create', [EventController::class, 'create'])->name('create');
-    Route::post('/calendar/get',  [EventController::class, 'get'])->name("get"); // DBに登録した予定を取得
-    Route::put('/calendar/update', [EventController::class, 'update'])->name("update"); // 予定の更新Copy
-    Route::delete('/calendar/delete', [EventController::class, 'delete'])->name("delete"); // 予定の削除
+    Route::post('/calendar/create', [EventController::class, 'create'])->name('calendar_create');
+    Route::post('/calendar/get',  [EventController::class, 'get'])->name("calendar_get"); // DBに登録した予定を取得
+    Route::put('/calendar/update', [EventController::class, 'update'])->name("calendar_update"); // 予定の更新Copy
+    Route::delete('/calendar/delete', [EventController::class, 'delete'])->name("calendar_delete"); // 予定の削除
     });
 Route::get('/dashboard', function () {
     return view('dashboard');

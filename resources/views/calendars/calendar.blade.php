@@ -13,7 +13,7 @@
         <div id='calendar'></div>
         <div id="modal-add" class="modal">
             <div class="modal-contents">
-                <form method="POST" action="{{ route('create') }}">
+                <form method="POST" action="{{ route('calendar_create') }}">
                     @csrf
                     <input id="new-id" type="hidden" name="id" value="" />
                     <label for="event_title">タイトル</label>
@@ -48,7 +48,7 @@
 <!-- カレンダー編集モーダル -->
         <div id="modal-update" class="modal">
             <div class="modal-contents">
-                <form method="POST" action="{{ route('update') }}" >
+                <form method="POST" action="{{ route('calendar_update') }}" >
                     @csrf
                     @method('PUT')
                     <input type="hidden" id="id" name="id" value="" />
@@ -79,7 +79,7 @@
                     <button type="button" onclick="closeUpdateModal()">キャンセル</button>
                     <button type="submit">決定</button>
                 </form>
-                <form id="delete-form" method="post" action="{{ route('delete') }}">
+                <form id="delete-form" method="post" action="{{ route('calendar_delete') }}">
                     @csrf
                     @method('DELETE')
                     <input type="hidden" id="delete-id" name="id" value="" />
